@@ -1,0 +1,23 @@
+<html>
+  <body>
+    <script src="../dist/index.js"></script>
+    <script>
+      localStorage.debug = "*";
+      (async () => {
+        try {
+          const iparent = new ibridge.Parent({
+            url: "http://localhost:8080/examples/child.html",
+          });
+          await iparent.handshake();
+          const value = await iparent.get("vehicles.getCar", 123);
+          console.log(value);
+
+          const error = await iparent.get("getError").catch((err) => err);
+          console.log(error)
+        } catch (err) {
+          console.error(err);
+        }
+      })();
+    </script>
+  </body>
+</html>
