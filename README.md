@@ -11,6 +11,7 @@
   **A fork of ibridge** a tiny, promise based, type safe library for easy, bidirectional and secure iframe communication. 
 </p>
 
+This fork includes the possibility to use a predefined iframe as source.
 
 ![how ibridge works](./assets/ibridge.svg)
 
